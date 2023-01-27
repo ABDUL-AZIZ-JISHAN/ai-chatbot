@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   min-height: 100vh;
+  background-color: #735d78;
+  overflow: hidden;
+}
+.app {
+  background-color: #b392ac;
+  width: 100vw;
+  height: 100vh;
+  /* border-radius: 40px; */
+  padding: 40px;
+  display: flex;
+}
+.result,
+.content {
+  width: 50%;
+}
+
+.content {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.prompt {
+  /* background-color: red; */
+  width: 100%;
+}
+textarea {
+  border: none;
+  background-color: #2c3546;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  font-size: 30px;
+  text-transform: capitalize;
+  resize: none;
+  color: #ccc;
+  height: 200px;
+}
+textarea:focus {
+  border: none;
+  outline: none;
+}
+h1 {
+  display: block;
+  width: 100%;
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+  /* margin:50px 0; */
+}
+button {
+  width: 90%;
+  /* margin: 0 auto; */
+  padding: 25px;
+  background-color: #e5dcc5;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  margin: 30px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #2c3546;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+button:focus {
+  outline: none;
+}
+button:disabled {
+  color: #ffffff62;
+  cursor: not-allowed;
 }
 
-.App-link {
-  color: #61dafb;
+.result {
+  background-color: #4c5564;
+  color: #ffffff;
+  font-size: 35px;
+  padding: 40px;
+  line-height: 50px;
+  border-radius: 30px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 992px) {
+  .app {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  /* .content{
+    width: 100%;
   }
+  .result{
+    width: 100%;
+  } */
 }
