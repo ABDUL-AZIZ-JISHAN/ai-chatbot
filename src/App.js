@@ -17,7 +17,8 @@ function App() {
 
   const handleClick = async () => {
     setLoading(true);
-
+    let val = prompt;
+    setPrompt("");
     try {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
@@ -38,9 +39,7 @@ function App() {
       <div className="content">
         <h1>AI ChatBot</h1>
         <div className="prompt">
-          <textarea type="text" value={prompt} onKeyDown={(e) => {
-            e.key === "Enter" && setPrompt(e.target.value)
-          }} onChange={(e) => setPrompt(e.target.value)} placeholder="write your command"></textarea>
+          <textarea type="text" value={prompt} onChange={(e) => setPrompt(e.target.value)} placeholder="write your command"></textarea>
           <button onClick={handleClick} disabled={loading || prompt.length === 0}>{loading ? 'generating....' : "generate"}</button>
         </div>
       </div>
